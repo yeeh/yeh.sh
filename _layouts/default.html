@@ -10,13 +10,14 @@
 <style>
 :root {
     color-scheme: light dark;
-    --bg: #fff;
+    --bg: #fbfbfa;
     --fg: #111;
     --muted: #666;
     --faint: #999;
-    --line: #e5e5e5;
-    --soft: #f6f6f6;
-    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --line: #e5e5e2;
+    --soft: #f6f6f4;
+    --accent: #7f8a94;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
 }
 * { box-sizing: border-box; }
 html, body, div, h1, p, a { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
@@ -27,7 +28,7 @@ body {
     color: var(--fg);
     font-family: var(--sans);
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.72;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -40,38 +41,40 @@ div {
     text-align: right;
 }
 h1 {
-    margin-bottom: 34px;
+    margin-bottom: 32px;
     color: var(--fg);
     font-size: clamp(2.4rem, 7vw, 5.6rem);
-    font-weight: 620;
-    line-height: .95;
-    letter-spacing: -.07em;
+    font-weight: 520;
+    line-height: .98;
+    letter-spacing: -.045em;
 }
 h1::after {
     content: " /";
-    color: var(--faint);
+    color: var(--accent);
     font-weight: 400;
 }
 p {
-    margin-top: 12px;
+    margin-top: 10px;
     color: var(--muted);
-    font-size: .95rem;
+    font-size: .9375rem;
+    line-height: 1.5;
 }
 a {
     display: inline-block;
     margin-left: 14px;
     color: inherit;
-    font-weight: 520;
+    font-weight: 500;
     text-decoration: none;
+    text-decoration-thickness: .08em;
     text-underline-offset: .18em;
-    transition: color .16s ease, border-color .16s ease;
+    transition: color .16s ease;
 }
 p:nth-child(2) a {
     color: var(--faint);
 }
 a:hover,
 a:focus {
-    color: var(--fg);
+    color: var(--accent);
     text-decoration: underline;
 }
 @media screen and (min-width: 1000px) {
@@ -111,12 +114,13 @@ a:focus {
 }
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --bg: #050505;
-        --fg: #f2f2f2;
-        --muted: #9a9a9a;
-        --faint: #777;
-        --line: #242424;
-        --soft: #111;
+        --bg: #0b0b0a;
+        --fg: #eeeeea;
+        --muted: #a6a6a0;
+        --faint: #777771;
+        --line: #2a2a27;
+        --soft: #151512;
+        --accent: #eeeeea;
     }
 }
 </style>
