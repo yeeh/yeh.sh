@@ -1,16 +1,23 @@
+---
+const {
+  title = 'Perry Yeh',
+  keywords = 'Perry Yeh',
+  description = 'A software engineer.',
+} = Astro.props;
+---
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta name="keywords" content="{{ site.keywords }}">
-<meta name="description" content="{{ site.description }}">
-<title>{% if page.title%}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+<meta name="keywords" content={keywords}>
+<meta name="description" content={description}>
+<title>{title}</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
-<style>
+<style is:global>
 :root {
     color-scheme: light dark;
     --bg: #fbfbfa;
@@ -135,6 +142,6 @@ a:focus {
 </style>
 </head>
 <body>
-{{ content }}
+<slot />
 </body>
 </html>
