@@ -1,8 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="404 Page Not Found">
-<h2>404 Page Not Found</h2>
-<a href="https://yeh.sh">auto redirecting to homepage...</a>
-<meta http-equiv="refresh" content="8; url=https://yeh.sh" />
+<Base title="404 Page Not Found" refresh="8; url=https://yeh.sh/">
+<main>
+    <h1>404</h1>
+    <p>Page Not Found</p>
+    <p><a href="https://yeh.sh/">auto redirecting to homepage...</a></p>
+</main>
 </Base>

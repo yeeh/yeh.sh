@@ -3,17 +3,21 @@ const {
   title = 'Perry Yeh',
   keywords = 'Perry Yeh',
   description = 'A software engineer.',
+  refresh = '',
 } = Astro.props;
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta name="keywords" content={keywords}>
 <meta name="description" content={description}>
+{refresh && <meta http-equiv="refresh" content={refresh} />}
 <title>{title}</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -25,14 +29,13 @@ const {
     --muted: #666;
     --faint: #999;
     --line: #e5e5e2;
-    --soft: #f6f6f4;
     --accent: #7f8a94;
     --sans: "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
     --mono: "SF Mono";
     --mono-fallback: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
-html, body, div, h1, p, a { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
+html, body, main, h1, p, a { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
 html { min-height: 100%; -webkit-text-size-adjust: 100%; }
 body {
     min-height: 100vh;
@@ -44,7 +47,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
-div {
+main {
     position: fixed;
     top: 50%;
     right: clamp(28px, 12vw, 180px);
@@ -94,7 +97,7 @@ a:focus {
     text-decoration: underline;
 }
 @media screen and (min-width: 1000px) {
-    div::before {
+    main::before {
         content: "";
         display: block;
         width: 72px;
@@ -110,7 +113,7 @@ a:focus {
         min-height: 100vh;
         padding: 28px;
     }
-    div {
+    main {
         position: static;
         width: 100%;
         transform: none;
@@ -135,7 +138,6 @@ a:focus {
         --muted: #a6a6a0;
         --faint: #777771;
         --line: #2a2a27;
-        --soft: #151512;
         --accent: #eeeeea;
     }
 }
